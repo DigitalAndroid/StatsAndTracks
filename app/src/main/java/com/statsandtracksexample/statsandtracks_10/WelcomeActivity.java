@@ -9,6 +9,7 @@ import android.widget.Button;
 public class WelcomeActivity extends AppCompatActivity {
 
     Button btn;
+    Button statsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +17,15 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         btn = (Button) findViewById(R.id.toMapButton);
+
+        statsBtn = (Button) findViewById(R.id.toStatsButton);
+
+        statsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toStatsActivity();
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +39,11 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent nextIntent = new Intent(this, IntegratingMapActivity.class);
         String message = "sample";
         nextIntent.putExtra("USERNAME", message);
+        startActivity(nextIntent);
+    }
+
+    public void toStatsActivity(){
+        Intent nextIntent = new Intent(this, SpeedStatsActivity.class);
         startActivity(nextIntent);
     }
 }

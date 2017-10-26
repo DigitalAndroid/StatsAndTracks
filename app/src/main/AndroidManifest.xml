@@ -61,7 +61,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".IntegratingMapActivity"></activity>
+        <activity android:name=".IntegratingMapActivity" />
+        <activity android:name=".SpeedStatsActivity"></activity>
     </application>
 
 </manifest>
